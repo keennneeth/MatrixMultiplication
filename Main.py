@@ -14,6 +14,8 @@ print ("(a) create a 5 by 6 matrix, A, whose entries are random integers between
 print("_"*75)
 print("\nMATRIX 1")
 print("_"*75)
+print("\n(a) Create a 5x6 matrix")
+
 
 
 A = newlist
@@ -23,6 +25,8 @@ print("\n(b) Find the transpose of, B, of this matrix")
 B = list(map(list,zip(*chunked_list)))
 for row in B:
     print(row)
+
+
 
 result = [[0,0,0,0,0],
           [0,0,0,0,0],
@@ -61,7 +65,7 @@ print("_"*75)
 print("\nMATRIX 2")
 print("_"*75)
 print("\n")
-print("(a) Create a 5x6 matrix\n")
+print("\n(a) Create a 5x6 matrix")
 
 randomlist1 = [random.randrange(10) for i in range (30)]
 chunked_list = list()
@@ -99,7 +103,7 @@ for r in result1:
 print("_"*75)
 print("\nMATRIX 3")
 print("_"*75)
-print("(a) Create a 5x6 matrix\n")
+print("\n(a) Create a 5x6 matrix")
 
 randomlist2 = [random.randrange(10) for i in range (30)]
 chunked_list = list()
@@ -131,3 +135,35 @@ for i in range(len(B2)):
             result1[i][j] += B2[i][k] * A2[k][j]
 for r in result1:
     print(r)
+
+print("_"*75)
+
+negrandomlist = [-1*random.randrange(10) for i in range (30)]
+chunked_list = list()
+chunk_size = 6
+
+for i in range(0, len(negrandomlist), chunk_size):
+    chunked_list.append(negrandomlist[i:i+chunk_size])
+
+negnewlist = chunked_list
+
+print ("(a) create a 5 by 6 matrix, A, whose entries are random integers between 0 and 10.")
+print("_"*75)
+print("\nMATRIX 1")
+print("_"*75)
+print("\n(a) Create a negative 5x6 matrix")
+
+negA = negnewlist
+print(*negA, sep = "\n")
+print("\n(REFERENCE (BELOW IS MATRIX A)")
+print(*A, sep = "\n")
+
+print("\nComputer A+C")
+
+result = [[A[i][j] + negA[i][j]  for j in range(len(A[0]))] for i in range(len(A))]
+
+for r in result:
+   print(r)
+
+
+print("\nFind the sum of all even numbers in A+C")
