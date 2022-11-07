@@ -8,26 +8,42 @@ chunk_size = 6
 for i in range(0, len(randomlist), chunk_size):
     chunked_list.append(randomlist[i:i+chunk_size])
 
-newlist = '\n'.join(map(str, chunked_list))
+newlist = chunked_list
 
 print ("(a) create a 5 by 6 matrix, A, whose entries are random integers between 0 and 10.")
 A = newlist
-print(A)
+print(*A, sep = "\n")
 
 
 
 print("\n(b) Find the transpose of, B, of this matrix")
-B = map(list,zip(*chunked_list))
+B = list(map(list,zip(*chunked_list)))
 for row in B:
     print(row)
 
 
-result = [[0,0,0],
-           [0,0,0],
-           [0,0,0]]
+
+
+result = [[0,0,0,0,0],
+          [0,0,0,0,0],
+          [0,0,0,0,0],
+          [0,0,0,0,0],
+          [0,0,0,0,0]]
 
 
 print("\n(c)find the product AB.")
+
+for i in range(len(A)):
+ 
+    # iterating by column by B
+    for j in range(len(B[0])):
+ 
+        # iterating by rows of B
+        for k in range(len(B)):
+            result[i][j] += A[i][k] * B[k][j]
+ 
+for r in result:
+    print(r)
 
 
 
