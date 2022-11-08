@@ -92,7 +92,7 @@ for i in range(len(A1)):
 for r in result:
     print(r)
 
-print("\n(c)find the product BA.")
+print("\n(d)find the product BA.")
 for i in range(len(B1)):
      for j in range(len(A1[0])):
         for k in range(len(A1)):
@@ -130,7 +130,7 @@ for i in range(len(A2)):
 for r in result:
     print(r)
 
-print("\n(c)find the product BA.")
+print("\n(d)find the product BA.")
 for i in range(len(B2)):
      for j in range(len(A2[0])):
         for k in range(len(A2)):
@@ -149,9 +149,8 @@ for i in range(0, len(negrandomlist), chunk_size):
 
 negnewlist = chunked_list
 
-print ("\n(a) create a 5 by 6 matrix, A, whose entries are random integers between 0 and 10.\n")
 
-print("\n(a) Create a negative 5x6 matrix")
+print("\n(g) Create a negative 5x6 matrix")
 
 negA = negnewlist
 print(*negA, sep = "\n")
@@ -161,7 +160,7 @@ print(*A, sep = "\n")
 
 
 
-print("\nComputer A+C")
+print("\n(h) Computer A+C")
 
 
 resultAC = [[A[i][j] + negA[i][j]  for j in range(len(A[0]))] for i in range(len(A))]
@@ -169,20 +168,56 @@ resultAC = [[A[i][j] + negA[i][j]  for j in range(len(A[0]))] for i in range(len
 for r in resultAC:
    print(r)
 
-print("\nFind the sum of all even numbers in A+C\n")
+print("\n(i) Find the sum of all even numbers in A+C\n")
 print("Even numbers in A + C below")
 print("_"*75)
 allrows = list(chain(resultAC[0], resultAC[1], resultAC[2], resultAC[3], resultAC[4]))
+
+
+mylist = []
 for num1 in allrows:
     if num1 % 2 == 0:
-        print (num1, end=" ")
-print("")
+        mylist.append(num1)
+print(mylist)
+total = sum(mylist)
 print("_"*75)
-total = 0
-list1 = [num1]
-for ele in range(0, len(list1)):
-    total = total + list1[ele]
- 
-print("\nSum of all elements in given list: ", total)
+
+
+print("\nTotal sum (even): ",total)
 print("\n")
 
+
+
+
+print("(j) Computer A-C")
+print("For Reference")
+print("\nBELOW IS MATRIX A")
+print(*A, sep = "\n")
+print("\nBELOW IS MATRIX C")
+print(*negA, sep = "\n")
+print("\nBELOW IS A-C")
+
+subresultAC = [[A[i][j] - negA[i][j]  for j in range(len(A[0]))] for i in range(len(A))]
+for r in subresultAC:
+   print(r)
+
+
+print("\nBelow are odd numbers in A-C")
+print("_"*75)
+allrows1 = list(chain(subresultAC[0], subresultAC[1], subresultAC[2], subresultAC[3], subresultAC[4]))
+
+print("\n(k)Find the sum of all odd numbers in A-C")
+
+mylist = []
+for num2 in allrows1:
+    if num2 % 2 == 1:
+        mylist.append(num2)
+print(mylist)
+total = sum(mylist)
+print("_"*75)
+
+
+
+
+print("\nTotal sum (odd): ",total)
+print("\n")
