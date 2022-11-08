@@ -1,4 +1,6 @@
 import random
+from itertools import chain
+
 
 
 randomlist = [random.randrange(10) for i in range (30)]
@@ -147,10 +149,8 @@ for i in range(0, len(negrandomlist), chunk_size):
 
 negnewlist = chunked_list
 
-print ("(a) create a 5 by 6 matrix, A, whose entries are random integers between 0 and 10.")
-print("_"*75)
-print("\nMATRIX 1")
-print("_"*75)
+print ("\n(a) create a 5 by 6 matrix, A, whose entries are random integers between 0 and 10.\n")
+
 print("\n(a) Create a negative 5x6 matrix")
 
 negA = negnewlist
@@ -158,12 +158,31 @@ print(*negA, sep = "\n")
 print("\n(REFERENCE (BELOW IS MATRIX A)")
 print(*A, sep = "\n")
 
+
+
+
 print("\nComputer A+C")
 
-result = [[A[i][j] + negA[i][j]  for j in range(len(A[0]))] for i in range(len(A))]
 
-for r in result:
+resultAC = [[A[i][j] + negA[i][j]  for j in range(len(A[0]))] for i in range(len(A))]
+
+for r in resultAC:
    print(r)
 
+print("\nFind the sum of all even numbers in A+C\n")
+print("Even numbers in A + C below")
+print("_"*75)
+allrows = list(chain(resultAC[0], resultAC[1], resultAC[2], resultAC[3], resultAC[4]))
+for num1 in allrows:
+    if num1 % 2 == 0:
+        print (num1, end=" ")
+print("")
+print("_"*75)
+total = 0
+list1 = [num1]
+for ele in range(0, len(list1)):
+    total = total + list1[ele]
+ 
+print("\nSum of all elements in given list: ", total)
+print("\n")
 
-print("\nFind the sum of all even numbers in A+C")
