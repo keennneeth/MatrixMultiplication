@@ -115,7 +115,7 @@ for i in range(0, len(randomlist), chunk_size):
     chunked_list.append(randomlist2[i:i+chunk_size])
 newlist2 = chunked_list
 A2 = newlist2
-print(*A1, sep = "\n")
+print(*A2, sep = "\n")
 
 print("\n(b) Find the transpose of, B, of this matrix")
 B2 = list(map(list,zip(*chunked_list)))
