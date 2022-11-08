@@ -203,10 +203,9 @@ for r in subresultAC:
 
 
 print("\nBelow are odd numbers in A-C")
-print("_"*75)
 allrows1 = list(chain(subresultAC[0], subresultAC[1], subresultAC[2], subresultAC[3], subresultAC[4]))
 
-print("\n(k)Find the sum of all odd numbers in A-C")
+print("_"*75)
 
 mylist = []
 for num2 in allrows1:
@@ -216,8 +215,6 @@ print(mylist)
 total = sum(mylist)
 print("_"*75)
 
-
-
-
+print("\n(k)Find the sum of all odd numbers in A-C")
 print("\nTotal sum (odd): ",total)
 print("\n")
